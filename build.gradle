@@ -20,11 +20,16 @@ repositories {
     }
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 libsDirectory.set(file("./server/plugins"))
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib:1.7.10"
     implementation fileTree(dir: "libs")
 }
 
