@@ -3,6 +3,10 @@ package io.github.tundraclimate.coldlib
 import org.bukkit.plugin.java.JavaPlugin
 
 class ColdLib : JavaPlugin() {
+    companion object {
+        lateinit var plugin: JavaPlugin
+    }
+
     private val version = "0.0.1"
     override fun onEnable() {
         logger.info(
@@ -14,9 +18,5 @@ class ColdLib : JavaPlugin() {
                                         by Tundra_Climate
             -============================================-
             """.trimIndent())
-    }
-
-    companion object {
-        lateinit var plugin: JavaPlugin
     }
 }

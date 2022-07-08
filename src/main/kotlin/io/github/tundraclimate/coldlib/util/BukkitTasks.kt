@@ -1,6 +1,7 @@
 package io.github.tundraclimate.coldlib.util
 
 import io.github.tundraclimate.coldlib.ColdLib
+
 import org.bukkit.scheduler.BukkitRunnable
 
 fun runTask(async: Boolean = false, task: Runnable) {
