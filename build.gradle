@@ -1,6 +1,7 @@
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'maven-publish'
 }
 
 group = 'io.github.tundraclimate'
@@ -36,5 +37,12 @@ shadowJar {
 compileKotlin {
     kotlinOptions {
         jvmTarget = "17"
+    }
+}
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
     }
 }
