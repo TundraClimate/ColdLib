@@ -1,7 +1,6 @@
 package io.github.tundraclimate.coldlib.addon
 
 import com.google.common.collect.Multimap
-
 import org.bukkit.Material
 import org.bukkit.attribute.Attribute
 import org.bukkit.attribute.AttributeModifier

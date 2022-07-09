@@ -1,9 +1,7 @@
 package io.github.tundraclimate.coldlib.database.sqlite
 
 import io.github.tundraclimate.coldlib.ColdLib
-
 import java.sql.*
-
 
 class SQLite(private val dbname: String) {
     private lateinit var connect: Connection

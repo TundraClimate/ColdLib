@@ -7,7 +7,7 @@ class ColdLib : JavaPlugin() {
         lateinit var plugin: JavaPlugin
     }
 
-    private val version = "0.0.1"
+    private val version = "0.0.2"
     override fun onEnable() {
         logger.info(
             """
