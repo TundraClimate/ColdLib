@@ -1,5 +1,5 @@
 name: ColdLib
-version: 0.0.2
+version: 0.0.3
 main: io.github.tundraclimate.coldlib.ColdLib
 api-version: 1.19
 authors: [ Tundra_Climate ]
