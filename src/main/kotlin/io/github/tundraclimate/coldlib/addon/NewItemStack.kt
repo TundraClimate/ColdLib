@@ -27,7 +27,7 @@ class NewItemStack(material: Material) {
             field = value
             item.itemMeta = meta
         }
-    var customModelData: Int? = meta?.customModelData
+    var customModelData: Int? = null
         set(value) {
             field = value
             item.itemMeta = meta
@@ -58,5 +58,13 @@ class NewItemStack(material: Material) {
             item.itemMeta = meta
         }
     var amount: Int = item.amount
+        set(value) {
+            field = value
+            item.amount = value
+        }
     var type: Material = item.type
+        set(value) {
+            field = value
+            item.type = value
+        }
 }
