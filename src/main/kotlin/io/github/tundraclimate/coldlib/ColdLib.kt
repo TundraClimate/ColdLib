@@ -6,6 +6,8 @@ import org.bukkit.plugin.java.JavaPlugin
 class ColdLib : JavaPlugin() {
     companion object {
         lateinit var plugin: JavaPlugin
+        fun info(log: String) = plugin.logger.info(log)
+        fun warn(log: String) = plugin.logger.warning(log)
     }
 
     private val version = "0.0.3"
@@ -21,7 +23,4 @@ class ColdLib : JavaPlugin() {
             -============================================-
             """.trimIndent())
     }
-
-    fun info(log: String) = plugin.logger.info(log)
-    fun warn(log: String) = plugin.logger.warning(log)
 }
