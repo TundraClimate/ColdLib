@@ -10,7 +10,7 @@ class ColdLib : JavaPlugin() {
         fun warn(log: String) = plugin.logger.warning(log)
     }
 
-    private val version = "0.0.3"
+    private val version = "0.0.4"
     override fun onEnable() {
         server.pluginManager.registerEvents(ListenEvent, this)
         logger.info(
@@ -21,6 +21,7 @@ class ColdLib : JavaPlugin() {
                 ColdLib Online..! version: $version 
                                         by Tundra_Climate
             -============================================-
-            """.trimIndent())
+            """.trimIndent()
+        )
     }
 }
