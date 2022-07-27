@@ -9,7 +9,7 @@ class NewInventory(owner: InventoryHolder? = null, row: Int = 3, title: String =
     val newInv = Bukkit.createInventory(owner, row * 9, title)
 
     fun fill(itemStack: ItemStack) {
-        newInv.forEachIndexed { i, stack -> newInv.setItem(i, stack) }
+        newInv.forEachIndexed { i, _ -> newInv.setItem(i, itemStack) }
     }
 
     fun copy(from: Inventory) {
