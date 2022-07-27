@@ -1,6 +1,7 @@
 package io.github.tundraclimate.coldlib.addon
 
 import com.google.common.collect.Multimap
+import io.github.tundraclimate.coldlib.ColdLib
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
 import org.bukkit.attribute.Attribute
@@ -19,7 +20,6 @@ class NewItemStack(private val material: Material) {
     var isUnbreakable = false
     var itemFlags = arrayOf<ItemFlag>()
     var attributeModifiers: Multimap<Attribute, AttributeModifier>? = null
-    var dataContainer: List<Triple<NamespacedKey, PersistentDataType<String, String>, String>> = listOf()
     var amount = 1
     var type = material
     val item: ItemStack
@@ -34,9 +34,6 @@ class NewItemStack(private val material: Material) {
                 m.isUnbreakable = isUnbreakable
                 m.addItemFlags(*itemFlags)
                 m.attributeModifiers = attributeModifiers
-                dataContainer.forEach {
-                    m.persistentDataContainer.set(it.first, it.second, it.third)
-                }
                 itemStack.setItemMeta(m)
             }
             itemStack.addUnsafeEnchantments(enchants)
@@ -44,4 +41,14 @@ class NewItemStack(private val material: Material) {
             itemStack.type = type
             return itemStack
         }
+
+    fun <T, Z : Any> addDataContainer(key: String, type: PersistentDataType<T, Z>, value: Z) {
+        val meta = item.itemMeta
+        meta?.persistentDataContainer?.set(
+            NamespacedKey(ColdLib.plugin, key),
+            type,
+            value
+        )
+        item.itemMeta = meta
+    }
 }
